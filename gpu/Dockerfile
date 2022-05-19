@@ -18,7 +18,7 @@ ARG OPENCV_VERSION=4.5.5
 SHELL ["/bin/bash", "-c"]
 # https://techoverflow.net/2019/05/18/how-to-fix-configuring-tzdata-interactive-input-when-building-docker-images/
 ENV DEBIAN_FRONTEND=noninteractive
-ENV TZ=Europe/Prague
+ENV TZ=Asia/Shanghai
 
 # ENV LD_LIBRARY_PATH /usr/local/${CUDA}/compat:$LD_LIBRARY_PATH
 
