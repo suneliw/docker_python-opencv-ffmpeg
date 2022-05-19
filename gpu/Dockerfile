@@ -5,7 +5,7 @@
 
 # CALL: docker image build -t python-opencv-ffmpeg:py36 -f cpu/Dockerfile --build-arg PYTHON_VERSION=3.6 .
 
-ARG CUDA_VERSION=11.4.0
+ARG CUDA_VERSION=11.2.0
 
 FROM nvidia/cuda:${CUDA_VERSION}-devel-ubuntu20.04
 
@@ -148,12 +148,12 @@ RUN \
       -D CMAKE_LIBRARY_PATH=/usr/local/cuda/lib64/stubs \
       # https://kezunlin.me/post/6580691f
       # https://stackoverflow.com/questions/28010399/build-opencv-with-cuda-support
-      -D CUDA_ARCH_BIN="5.3 6.1 7.0 7.5" \
+      -D CUDA_ARCH_BIN="7.5 8.6" \
       -D CUDA_ARCH_PTX="" \
       -D WITH_CUBLAS=ON \
       -D WITH_NVCUVID=ON \
-      -D ENABLE_FAST_MATH=1 \
-      -D CUDA_FAST_MATH=1 \
+      #-D ENABLE_FAST_MATH=1 \
+      #-D CUDA_FAST_MATH=1 \
       -D ENABLE_PRECOMPILED_HEADERS=OFF \
       .. \
     && \
